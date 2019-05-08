@@ -10,11 +10,11 @@ const AddBeerCard = (props) => {
           <h5 className="card-title">Name:
           {/* {props.beers[props.index].name} */}
           </h5>
-          
+
           <div>
-          <p>Vote</p>
-          <i onChange={props.increaseLike} className="far fa-thumbs-up"></i>
-          <i onChange={props.decreaseLike} className="far fa-thumbs-down"></i>
+            <p>Vote</p>
+            <i onChange={props.increaseLike} className="far fa-thumbs-up"></i>
+            <i onChange={props.decreaseLike} className="far fa-thumbs-down"></i>
           </div>
         </div>
       </div>

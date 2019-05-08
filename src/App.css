@@ -1,3 +1,14 @@
 .cooler {
   width: 20vw
 }
+
+.link {
+  color: #513B41;
+}
+
+.link:hover {
+  cursor: pointer;
+  color: blue;
+}
+
+

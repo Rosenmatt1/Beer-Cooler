@@ -116,17 +116,23 @@ class App extends Component {
         />
 
         {!this.state.addBeer
-          ? <p
-            onClick={(e) => this.addNewBeer(e)}
-            className="text-center">
-            Not seeing a beer?
-          </p>
+          ?
+          <div className="row center">
+            <div className="col">
+              <p
+                onClick={(e) => this.addNewBeer(e)}
+                className="link text-center"><small>
+                Not seeing a beer? Click Here
+                </small>
+              </p>
+            </div>
+          </div>
           : <AddBeerCard />
         }
 
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
