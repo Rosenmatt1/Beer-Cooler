@@ -25,10 +25,17 @@ class App extends Component {
     this.setState({ beers: json })
   }
 
-  addNewBeer = (e) => {
+  addNewBeerSection = (e) => {
     e.preventDefault()
     this.setState({
       addBeer: true
+    })
+  }
+
+  getNameOfBeer = (e) => {
+    e.preventDefault()
+    this.setState({
+      name: e.target.value
     })
   }
 
@@ -120,14 +127,16 @@ class App extends Component {
           <div className="row center">
             <div className="col">
               <p
-                onClick={(e) => this.addNewBeer(e)}
+                onClick={(e) => this.addNewBeerSection(e)}
                 className="link text-center"><small>
                 Not seeing a beer? Click Here
                 </small>
               </p>
             </div>
           </div>
-          : <AddBeerCard />
+          : <AddBeerCard 
+              getNameOfBeer={this.getNameOfBeer}
+            />
         }
 
       </div>

@@ -10,15 +10,18 @@ const AddBeerCard = (props) => {
       <div className="card col-lg-8 mx-2 my-2">
         <div className="card-body">
           <h3>Add a Beer</h3>
-          <h5 className="card-title">Name:
-          {/* {props.beers[props.index].name} */}
-          </h5>
+          <i class="beerIcon fas fa-beer fa-3x"></i>
+          <h5 className="card-title">Name:</h5>
+          <input onChange={(e) => props.getNameOfBeer(e)}type="text" name="name" />
 
           <div>
             <p>Vote</p>
-            <i onChange={props.increaseLike} className="far fa-thumbs-up"></i>
-            <i onChange={props.decreaseLike} className="far fa-thumbs-down"></i>
+            <i onChange={props.increaseLike} className="vote far fa-thumbs-up fa-3x"></i>
+            <i onChange={props.decreaseLike} className="vote far fa-thumbs-down fa-3x"></i>
           </div>
+
+          <button type="button" className="button btn btn-secondary">Create Beer</button>
+
         </div>
       </div>
     </div>

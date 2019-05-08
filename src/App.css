@@ -3,6 +3,10 @@
   justify-content: center;
 }
 
+.vote {
+  color:#513B41;
+}
+
 .link {
   color: #513B41;
 }
@@ -11,5 +15,16 @@
   cursor: pointer;
   color: blue;
 }
+
+.beerIcon {
+  color:#513B41;
+}
+
+.button {
+  color:#513B41;
+  background-color: white;
+  border: 2px solid #513B41;
+}
+
 
 
