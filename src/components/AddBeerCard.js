@@ -1,6 +1,9 @@
 import React from 'react';
 import '../App.css';
 
+
+// border - 0
+
 const AddBeerCard = (props) => {
   return (
     <div className="row justify-content-center">

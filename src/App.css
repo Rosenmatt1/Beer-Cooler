@@ -1,5 +1,6 @@
 .cooler {
-  width: 20vw
+  width: 20vw;
+  justify-content: center;
 }
 
 .link {

@@ -1,5 +1,8 @@
 import React from 'react';
 import '../App.css';
+import mug from '../assets/beer-mug.gif'
+
+// border - 0
 
 const VoteCard = (props) => {
   return (
@@ -13,6 +16,11 @@ const VoteCard = (props) => {
           <h5 className="card-text">Likes: 
           {/* {props.beers[props.index].likes} */}
           </h5>
+          <img
+            className="cooler img-responsive center-block"
+            src={mug}
+            alt="Das Boot beer mug"
+          />
           <i onClick={(e) => props.increaseLike(e)} className="far fa-thumbs-up"></i>
           <i onClick={(e) => props.decreaseLike(e)} className="far fa-thumbs-down"></i>
         </div>
