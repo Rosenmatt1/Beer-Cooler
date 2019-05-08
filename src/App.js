@@ -7,7 +7,9 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      beers: ""
+      beers: [],
+      name: "",
+      likes: 0
     }
   }
 
@@ -16,6 +18,27 @@ class App extends Component {
     const json = await response.json()
     console.log(json)
     this.setState({ beers: json })
+  }
+
+  addNewBeer = async (e) => {
+    e.preventDefault()
+    var newBeer = {
+      // id: this.state.beers.length + 1,
+      name: this.state.name,
+      likes: this.state.likes
+    }
+    await fetch(url, {
+      method: 'POST',
+      body: JSON.stringify(newBeer),
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      }
+    })
+    this.setState({
+      name: this.state.name,
+      likes: this.state.likes
+    })
   }
 
   render() {
