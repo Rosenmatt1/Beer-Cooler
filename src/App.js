@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import cooler from './assets/beer-cooler.png'
-import Card from './components/Card.js'
+import VoteCard from './components/VoteCard.js'
+import AddBeerCard from './components/AddBeerCard.js'
 
 const url = "https://cors-anywhere.herokuapp.com/https://beer.fluentcloud.com/v1/beer"
 
@@ -12,7 +13,8 @@ class App extends Component {
       beers: [],
       index: 0,
       name: "",
-      likes: 0
+      likes: 0,
+      addBeer: false
     }
   }
 
@@ -23,7 +25,14 @@ class App extends Component {
     this.setState({ beers: json })
   }
 
-  addNewBeer = async (e) => {
+  addNewBeer = (e) => {
+    e.preventDefault()
+    this.setState({
+      addBeer: true
+    })
+  }
+
+  createBeer = async (e) => {
     e.preventDefault()
     var newBeer = {
       // id: this.state.beers.length + 1,
@@ -65,13 +74,13 @@ class App extends Component {
       name: this.state.name,
       likes: this.state.likes
     }
-    const mappedBeers = this.state.beers.map(beer => {
-      if (this.state.beers[this.state.index].id === beer.id) {
-        this.state.beers[this.state.index].name = this.state.name
-        this.state.beers[this.state.index].likes = this.state.likes
-      }
-      return beer
-    })
+    // const mappedBeers = this.state.beers.map(beer => {
+    //   if (this.state.beers[this.state.index].id === beer.id) {
+    //     this.state.beers[this.state.index].name = this.state.name
+    //     this.state.beers[this.state.index].likes = this.state.likes
+    //   }
+    //   return beer
+    // })
     await fetch(`url${this.state.beers[this.state.index].id}`, {
       method: 'PUT',
       body: JSON.stringify(editedBeer),
@@ -81,7 +90,7 @@ class App extends Component {
       }
     })
     this.setState({
-      name: this.state.name, 
+      name: this.state.name,
       likes: this.state.likes
     })
   }
@@ -90,23 +99,34 @@ class App extends Component {
 
     return (
       <div className="container-fluid">
-      <h1 className="text-center">The Beer Cooler</h1>
-      <img className="cooler img-responsive" src={cooler}/>
+        <h1 className="text-center">The Beer Cooler</h1>
+        <img
+          className="cooler img-responsive center-block"
+          src={cooler}
+          alt="Das Boot Beer Cooler"
+        />
 
-      <Card 
-      beers={this.state.beers}
-      name={this.state.name}
-      likes={this.state.likes}
-      index={this.state.index}
-      increaseLike={this.increaseLike}
-      decreaseLike={this.decreaseLike}
-      />
+        <VoteCard
+          beers={this.state.beers}
+          name={this.state.name}
+          likes={this.state.likes}
+          index={this.state.index}
+          increaseLike={this.increaseLike}
+          decreaseLike={this.decreaseLike}
+        />
+
+        {!this.state.addBeer
+          ? <p
+            onClick={(e) => this.addNewBeer(e)}
+            className="text-center">
+            Not seeing a beer?
+          </p>
+          : <AddBeerCard />
+        }
 
       </div>
     );
   }
 }
-
-
 
 export default App;
