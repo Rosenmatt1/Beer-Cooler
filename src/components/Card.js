@@ -8,6 +8,7 @@ const Card = (props) => {
         <div className="card-body">
           <h5 className="card-title">Name: {props.beers[props.index].name}</h5>
           <h5 className="card-text">Likes: {props.beers[props.index].likes}</h5>
+          <i className="far fa-thumbs-up"></i>
         </div>
       </div>
     </div>
@@ -23,4 +24,3 @@ export default Card
 
 
 
-<i class="far fa-thumbs-up"></i>

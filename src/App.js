@@ -78,8 +78,14 @@ class App extends Component {
       <div className="container-fluid">
       <img className="cooler" src={cooler}/>
 
-      <Card />
-      
+      <Card 
+      beers={this.state.beers}
+      name={this.state.name}
+      likes={this.state.likes}
+      index={this.state.index}
+    
+      />
+
       </div>
     );
   }
