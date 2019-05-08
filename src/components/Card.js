@@ -9,6 +9,7 @@ const Card = (props) => {
           <h5 className="card-title">Name: {props.beers[props.index].name}</h5>
           <h5 className="card-text">Likes: {props.beers[props.index].likes}</h5>
           <i className="far fa-thumbs-up"></i>
+          <i className="far fa-thumbs-down"></i>
         </div>
       </div>
     </div>
