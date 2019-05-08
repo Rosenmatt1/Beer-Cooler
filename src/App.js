@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import cooler from './assets/beer-cooler.png'
-// import Card from './components/Card.js'
+import Card from './components/Card.js'
 
 const url = "https://cors-anywhere.herokuapp.com/https://beer.fluentcloud.com/v1/beer"
 
@@ -44,6 +44,20 @@ class App extends Component {
     })
   }
 
+  increaseLike = (e) => {
+    e.preventDefault()
+    this.setState({
+      likes: this.state.likes + 1
+    })
+  }
+
+  decreaseLike = (e) => {
+    e.preventDefault()
+    this.setState({
+      likes: this.state.likes - 1
+    })
+  }
+
   editBeer = async (e) => {
     e.preventDefault()
     const editedBeer = {
@@ -77,14 +91,16 @@ class App extends Component {
     return (
       <div className="container-fluid">
       <h1 className="text-center">The Beer Cooler</h1>
-      <img className="cooler" src={cooler}/>
+      <img className="cooler img-responsive" src={cooler}/>
 
-      {/* <Card 
+      <Card 
       beers={this.state.beers}
       name={this.state.name}
       likes={this.state.likes}
       index={this.state.index}
-      /> */}
+      increaseLike={this.increaseLike}
+      decreaseLike={this.decreaseLike}
+      />
 
       </div>
     );
