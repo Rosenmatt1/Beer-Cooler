@@ -42,6 +42,34 @@ class App extends Component {
     })
   }
 
+  editBeer = async (e) => {
+    e.preventDefault()
+    const editedBeer = {
+      id: this.state.flashcards[this.state.index].id,
+      name: this.state.name,
+      likes: this.state.likes
+    }
+    const mappedBeers = this.state.beers.map(beer => {
+      if (this.state.beers[this.state.index].id === beer.id) {
+        this.state.beers[this.state.index].name = this.state.name
+        this.state.beers[this.state.index].likes = this.state.likes
+      }
+      return beer
+    })
+    await fetch(`url${this.state.beers[this.state.index].id}`, {
+      method: 'PUT',
+      body: JSON.stringify(editedBeer),
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      }
+    })
+    this.setState({
+      name: this.state.name, 
+      likes: this.state.likes
+    })
+  }
+
   render() {
 
     return (
