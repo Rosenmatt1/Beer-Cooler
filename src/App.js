@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import cooler from './assets/beer-cooler.png'
 
 const url = "https://cors-anywhere.herokuapp.com/https://beer.fluentcloud.com/v1/beer"
 
@@ -45,7 +46,7 @@ class App extends Component {
 
     return (
       <div className="container-fluid">
-    
+      <img className="cooler" src={cooler}/>
       </div>
     );
   }
