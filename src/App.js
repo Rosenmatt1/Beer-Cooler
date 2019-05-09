@@ -32,6 +32,8 @@ class App extends Component {
     // this.setState({ guessedAnswer: false })
   }
 
+  // ${ this.state.beers[this.state.index].id }
+
   deleteBeer = async (e) => {
     e.preventDefault()
     const removeBeer = this.state.beers.filter(beer => {
@@ -39,9 +41,16 @@ class App extends Component {
       }
       return !beer
     })
-    await fetch(`url${this.state.beers[this.state.index].id}`, {
+    console.log("removeBeer", removeBeer )
+    const removedBeer = this.state.beers.filter(beer => {
+      if (beer.id === this.state.beers[this.state.index].id) {
+      }
+      return beer
+    })
+    console.log("removedBeer", removedBeer)
+    await fetch(`url/582`, {
       method: 'DELETE',
-      body: JSON.stringify(removeBeer),
+      body: JSON.stringify(removedBeer),
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
@@ -147,6 +156,7 @@ class App extends Component {
           index={this.state.index}
           increaseLike={this.increaseLike}
           decreaseLike={this.decreaseLike}
+          deleteBeer={this.deleteBeer}
         />
 
         {!this.state.addBeer

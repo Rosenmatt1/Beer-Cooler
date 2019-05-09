@@ -20,12 +20,12 @@ const VoteCard = (props) => {
           </h5>
 
           <h5 className="card-text">Likes:
-          {props.beers[0]
+            {props.beers[0]
               ? <div>{props.beers[0].likes}</div>
               : <div></div>
             }
           </h5>
-          
+
           <img
             className="cooler img-responsive center-block"
             src={mug}
@@ -33,11 +33,17 @@ const VoteCard = (props) => {
           />
 
           <div className="col">
-              <i onClick={(e) => props.increaseLike(e)} className="vote far fa-thumbs-up fa-3x"></i>
-              <i onClick={(e) => props.decreaseLike(e)} className="vote far fa-thumbs-down fa-3x"></i>
+            <i onClick={(e) => props.increaseLike(e)} className="vote far fa-thumbs-up fa-3x"></i>
+            <i onClick={(e) => props.decreaseLike(e)} className="vote far fa-thumbs-down fa-3x"></i>
           </div>
 
-          <button type="button" className="clickable">Delete Beer</button>
+          <button 
+            type="button" 
+            className="clickable"
+            onClick={(e) => props.deleteBeer(e)}
+          >
+            Delete Beer
+          </button>
 
         </div>
       </div>
