@@ -8,8 +8,10 @@ const AddBeerCard = (props) => {
     <div className="row justify-content-center">
       <div className="card col-lg-8 mx-2 my-2">
         <div className="card-body">
-          <h3>Add a Beer</h3>
-          <i className="beerIcon fas fa-beer fa-3x"></i>
+          <div className="row">
+            <h3 className="textColor"> Add a Beer </h3>
+            <i className="beerIcon fas fa-beer fa-2x"></i>
+          </div>
           {/* <h5 className="card-title">Name:</h5> */}
           <input
             onChange={(e) => props.getNameOfBeer(e)}
@@ -20,7 +22,7 @@ const AddBeerCard = (props) => {
           />
 
           <div>
-            <p>Vote</p>
+            <p className="textColor"> Vote </p>
             <i onClick={(e) => props.increaseLike(e)} className="vote far fa-thumbs-up fa-3x"></i>
             <i onClick={(e) => props.decreaseLike(e)} className="vote far fa-thumbs-down fa-3x"></i>
           </div>

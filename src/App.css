@@ -1,6 +1,12 @@
 .cooler {
-  width: 20vw;
-  justify-content: center;
+  height: 20vw;
+  /* justify-content: center;  */
+  /* margin-left: 50%;
+  margin-right: 50%;  */
+}   
+
+.textColor {
+  color:#513B41;
 }
 
 .vote {

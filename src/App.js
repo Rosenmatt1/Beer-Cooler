@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import cooler from './assets/beer-cooler.png'
+// import boot from './assets/beer-boot.jpeg'
 import VoteCard from './components/VoteCard.js'
 import AddBeerCard from './components/AddBeerCard.js'
 
@@ -21,7 +22,7 @@ class App extends Component {
   async componentDidMount() {
     const response = await fetch(url)
     const json = await response.json()
-    this.setState({ 
+    this.setState({
       beers: json,
       likes: json[0].likes,
       name: json[0].name
@@ -130,7 +131,7 @@ class App extends Component {
   createBeer = async (e) => {
     e.preventDefault()
     let newBeer = {
-      id: this.state.beers[0].id +1,
+      id: this.state.beers[0].id + 1,
       name: this.state.name,
       likes: this.state.likes
     }
@@ -165,13 +166,18 @@ class App extends Component {
 
     return (
       <div className="container-fluid">
-        <h1 className="text-center">The Beer Cooler</h1>
-        <img
-          className="cooler img-responsive center-block"
-          src={cooler}
-          alt="Das Boot Beer Cooler"
-        />
+        <h1 className="text-center textColor">The Beer Cooler</h1>
 
+        <div className="row">
+        <div className="col-5"></div>
+          <img
+            className="cooler img-responsive center-block"
+            src={cooler}
+            alt="Das Boot Beer Cooler"
+          />
+        <div className="col-5"></div>
+        </div>
+        
         <VoteCard
           beers={this.state.beers}
           name={this.state.name}
