@@ -104,14 +104,15 @@ class App extends Component {
     })
     this.setState({
       beers: removeBeer,
-      index: this.state.index - 1
     })
+    this.currentBeer()
   }
 
   addNewBeerSection = (e) => {
     e.preventDefault()
     this.setState({
-      addBeer: true
+      addBeer: true,
+      likes: 0
     })
   }
 
@@ -124,7 +125,8 @@ class App extends Component {
 
   createBeer = async (e) => {
     e.preventDefault()
-    var newBeer = {
+    let newBeer = {
+      id: this.state.beers[0].id +1,
       name: this.state.name,
       likes: this.state.likes
     }
@@ -136,10 +138,9 @@ class App extends Component {
         'Accept': 'application/json',
       }
     })
-    // this.setState({
-    //   name: this.state.name,
-    //   likes: this.state.likes
-    // })
+    this.setState({
+      beers: [...this.state.beers, newBeer]
+    })
   }
 
   increaseLike = (e) => {
@@ -169,7 +170,7 @@ class App extends Component {
 
         <VoteCard
           beers={this.state.beers}
-          // name={this.state.name}
+          name={this.state.name}
           likes={this.state.likes}
           index={this.state.index}
           increaseLike={this.increaseLike}
