@@ -21,7 +21,11 @@ class App extends Component {
   async componentDidMount() {
     const response = await fetch(url)
     const json = await response.json()
-    this.setState({ beers: json })
+    this.setState({ 
+      beers: json,
+      likes: json[0].likes,
+      name: json[0].name
+    })
   }
 
   currentBeer = () => {
@@ -62,7 +66,7 @@ class App extends Component {
       return beer
     })
     console.log(mappedBeers)
-    await fetch(`url/${this.state.beers[this.state.index].id}`, {
+    await fetch(`https://cors-anywhere.herokuapp.com/https://beer.fluentcloud.com/v1/beer/${this.state.beers[this.state.index].id}`, {
       method: 'PUT',
       body: JSON.stringify(editedBeer),
       headers: {
