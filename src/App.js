@@ -94,7 +94,7 @@ class App extends Component {
       return !beer
     })
     console.log("removedBeer", removedBeer)
-    await fetch(`url${this.state.beers[this.state.index].id}`, {
+    await fetch(`https://cors-anywhere.herokuapp.com/https://beer.fluentcloud.com/v1/beer/${this.state.beers[this.state.index].id}`, {
       method: 'DELETE',
       body: JSON.stringify(removedBeer),
       headers: {
