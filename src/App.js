@@ -70,7 +70,6 @@ class App extends Component {
   createBeer = async (e) => {
     e.preventDefault()
     var newBeer = {
-      // id: this.state.beers.length + 1,
       name: this.state.name,
       likes: this.state.likes
     }
@@ -82,10 +81,10 @@ class App extends Component {
         'Accept': 'application/json',
       }
     })
-    this.setState({
-      name: this.state.name,
-      likes: this.state.likes
-    })
+    // this.setState({
+    //   name: this.state.name,
+    //   likes: this.state.likes
+    // })
   }
 
   increaseLike = (e) => {
@@ -157,16 +156,16 @@ class App extends Component {
               <p
                 onClick={(e) => this.addNewBeerSection(e)}
                 className="link text-center"><small>
-                Not seeing a beer? Click Here
+                  Not seeing a beer? Click Here
                 </small>
               </p>
             </div>
           </div>
-          : <AddBeerCard 
-              getNameOfBeer={this.getNameOfBeer}
-            />
+          : <AddBeerCard
+            getNameOfBeer={this.getNameOfBeer}
+            createBeer={this.createBeer}
+          />
         }
-
       </div>
     )
   }

@@ -20,7 +20,12 @@ const AddBeerCard = (props) => {
             <i onChange={props.decreaseLike} className="vote far fa-thumbs-down fa-3x"></i>
           </div>
 
-          <button type="button" className="clickable">Create Beer</button>
+          <button 
+            type="button" 
+            className="clickable"
+            onClick={(e) => props.createBeer(e)}
+            >Create Beer
+          </button>
 
         </div>
       </div>
