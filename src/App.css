@@ -30,6 +30,10 @@
   box-shadow: 0 8px 6px -6px black;
 }
 
+.inputField {
+  border: 1px solid #513B41;
+}
+
     
    
     /* shadowOffset: {

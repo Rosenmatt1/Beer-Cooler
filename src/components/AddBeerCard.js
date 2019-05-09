@@ -15,6 +15,7 @@ const AddBeerCard = (props) => {
             onChange={(e) => props.getNameOfBeer(e)}
             type="text"
             name="name"
+            className="inputField"
           />
 
           <div>
