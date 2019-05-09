@@ -36,6 +36,9 @@ const VoteCard = (props) => {
               <i onClick={(e) => props.increaseLike(e)} className="vote far fa-thumbs-up fa-3x"></i>
               <i onClick={(e) => props.decreaseLike(e)} className="vote far fa-thumbs-down fa-3x"></i>
           </div>
+
+          <button type="button" className="clickable">Delete Beer</button>
+
         </div>
       </div>
     </div>
