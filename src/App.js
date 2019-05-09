@@ -26,6 +26,33 @@ class App extends Component {
     // console.log("beers", this.state.beers)
   }
 
+  beer = () => {
+    if (this.state.index !== this.state.beer.length - 1) this.setState({ index: this.state.index + 1 })
+    if (this.state.index === this.state.beer.length - 1) this.setState({ index: 0 })
+    // this.setState({ guessedAnswer: false })
+  }
+
+  deleteBeer = async (e) => {
+    e.preventDefault()
+    const removeBeer = this.state.beers.filter(beer => {
+      if (beer.id === this.state.beers[this.state.index].id) {
+      }
+      return !beer
+    })
+    await fetch(`url${this.state.beers[this.state.index].id}`, {
+      method: 'DELETE',
+      body: JSON.stringify(removeBeer),
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      }
+    })
+    this.setState({
+      beers: removeBeer,
+      index: this.state.index - 1
+    })
+  }
+
   addNewBeerSection = (e) => {
     e.preventDefault()
     this.setState({
