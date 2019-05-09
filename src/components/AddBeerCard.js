@@ -10,7 +10,7 @@ const AddBeerCard = (props) => {
       <div className="card col-lg-8 mx-2 my-2">
         <div className="card-body">
           <h3>Add a Beer</h3>
-          <i class="beerIcon fas fa-beer fa-3x"></i>
+          <i className="beerIcon fas fa-beer fa-3x"></i>
           <h5 className="card-title">Name:</h5>
           <input onChange={(e) => props.getNameOfBeer(e)}type="text" name="name" />
 
@@ -20,7 +20,7 @@ const AddBeerCard = (props) => {
             <i onChange={props.decreaseLike} className="vote far fa-thumbs-down fa-3x"></i>
           </div>
 
-          <button type="button" className="button btn btn-secondary">Create Beer</button>
+          <button type="button" className="clickable">Create Beer</button>
 
         </div>
       </div>
