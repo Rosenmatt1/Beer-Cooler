@@ -5,16 +5,25 @@ import mug from '../assets/beer-mug.gif'
 // border - 0
 
 const VoteCard = (props) => {
+  console.log("beer props", props.beers)
   return (
     <div className="row justify-content-center">
       <div className="card col-lg-8 mx-2 my-2">
         <div className="card-body">
           <h3> Your Vote Counts </h3>
-          <h5 className="card-title">Name:
-          {/* {props.beers[props.index].name} */}
+
+          <h5 className="card-title"> Name:
+            {props.beers[0]
+              ? <div>{props.beers[0].name}</div>
+              : <div></div>
+            }
           </h5>
+
           <h5 className="card-text">Likes:
-          {/* {props.beers[props.index].likes} */}
+          {props.beers[0]
+              ? <div>{props.beers[0].likes}</div>
+              : <div></div>
+            }
           </h5>
           
           <img

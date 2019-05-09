@@ -21,8 +21,9 @@ class App extends Component {
   async componentDidMount() {
     const response = await fetch(url)
     const json = await response.json()
-    console.log(json)
+    // console.log("json", json)
     this.setState({ beers: json })
+    // console.log("beers", this.state.beers)
   }
 
   addNewBeerSection = (e) => {
@@ -115,7 +116,7 @@ class App extends Component {
 
         <VoteCard
           beers={this.state.beers}
-          name={this.state.name}
+          // name={this.state.name}
           likes={this.state.likes}
           index={this.state.index}
           increaseLike={this.increaseLike}
