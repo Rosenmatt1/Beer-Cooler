@@ -162,8 +162,10 @@ class App extends Component {
             </div>
           </div>
           : <AddBeerCard
-            getNameOfBeer={this.getNameOfBeer}
-            createBeer={this.createBeer}
+              getNameOfBeer={this.getNameOfBeer}
+              createBeer={this.createBeer}
+              increaseLike={this.increaseLike}
+              decreaseLike={this.deceaseLike}
           />
         }
       </div>
