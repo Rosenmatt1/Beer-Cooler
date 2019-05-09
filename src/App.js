@@ -4,7 +4,7 @@ import cooler from './assets/beer-cooler.png'
 import VoteCard from './components/VoteCard.js'
 import AddBeerCard from './components/AddBeerCard.js'
 
-const url = "https://cors-anywhere.herokuapp.com/https://beer.fluentcloud.com/v1/beer"
+const url = "https://cors-anywhere.herokuapp.com/https://beer.fluentcloud.com/v1/beer/"
 
 class App extends Component {
   constructor() {
@@ -21,14 +21,16 @@ class App extends Component {
   async componentDidMount() {
     const response = await fetch(url)
     const json = await response.json()
-    // console.log("json", json)
     this.setState({ beers: json })
-    // console.log("beers", this.state.beers)
   }
 
-  beer = () => {
+  currentBeer = () => {
     if (this.state.index !== this.state.beers.length - 1) this.setState({ index: this.state.index + 1 })
     if (this.state.index === this.state.beers.length - 1) this.setState({ index: 0 })
+    this.setState({
+      likes: this.state.beers[this.state.index].likes,
+      name: this.state.beers[this.state.index].name
+    })
   }
 
   increaseLikePut = (e) => {
@@ -43,12 +45,10 @@ class App extends Component {
     this.setState({
       likes: this.state.likes - 1
     })
-
   }
 
   editBeer = async (e) => {
     e.preventDefault()
-    this.beer()
     const editedBeer = {
       id: this.state.beers[this.state.index].id,
       name: this.state.name,
@@ -75,25 +75,26 @@ class App extends Component {
       name: this.state.name,
       likes: this.state.likes
     })
+    this.currentBeer()
   }
-
-  // ${ this.state.beers[this.state.index].id }
 
   deleteBeer = async (e) => {
     e.preventDefault()
     const removeBeer = this.state.beers.filter(beer => {
       if (beer.id === this.state.beers[this.state.index].id) {
-      }
-      return !beer
-    })
-    console.log("removeBeer", removeBeer )
-    const removedBeer = this.state.beers.filter(beer => {
-      if (beer.id === this.state.beers[this.state.index].id) {
+        return !beer
       }
       return beer
     })
+    console.log("removeBeer", removeBeer)
+    const removedBeer = this.state.beers.filter(beer => {
+      if (beer.id === this.state.beers[this.state.index].id) {
+        return beer
+      }
+      return !beer
+    })
     console.log("removedBeer", removedBeer)
-    await fetch(`url/582`, {
+    await fetch(`url${this.state.beers[this.state.index].id}`, {
       method: 'DELETE',
       body: JSON.stringify(removedBeer),
       headers: {
@@ -190,10 +191,10 @@ class App extends Component {
             </div>
           </div>
           : <AddBeerCard
-              getNameOfBeer={this.getNameOfBeer}
-              createBeer={this.createBeer}
-              increaseLike={this.increaseLike}
-              decreaseLike={this.deceaseLike}
+            getNameOfBeer={this.getNameOfBeer}
+            createBeer={this.createBeer}
+            increaseLike={this.increaseLike}
+            decreaseLike={this.deceaseLike}
           />
         }
       </div>
