@@ -14,14 +14,14 @@ const VoteCard = (props) => {
 
           <h5 className="card-title"> Name:
             {props.beers[0]
-              ? <div>{props.beers[0].name}</div>
+              ? <div>{props.beers[props.index].name}</div>
               : <div></div>
             }
           </h5>
 
           <h5 className="card-text">Likes:
             {props.beers[0]
-              ? <div>{props.beers[0].likes}</div>
+              ? <div>{props.beers[props.index].likes}</div>
               : <div></div>
             }
           </h5>
@@ -36,6 +36,14 @@ const VoteCard = (props) => {
             <i onClick={(e) => props.increaseLike(e)} className="vote far fa-thumbs-up fa-3x"></i>
             <i onClick={(e) => props.decreaseLike(e)} className="vote far fa-thumbs-down fa-3x"></i>
           </div>
+
+          <button
+            type="button"
+            className="clickable"
+            onClick={(e) => props.editBeer(e)}
+          >
+             Cast Vote!
+          </button>
 
           <button 
             type="button" 

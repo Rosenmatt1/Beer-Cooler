@@ -27,9 +27,54 @@ class App extends Component {
   }
 
   beer = () => {
-    if (this.state.index !== this.state.beer.length - 1) this.setState({ index: this.state.index + 1 })
-    if (this.state.index === this.state.beer.length - 1) this.setState({ index: 0 })
-    // this.setState({ guessedAnswer: false })
+    if (this.state.index !== this.state.beers.length - 1) this.setState({ index: this.state.index + 1 })
+    if (this.state.index === this.state.beers.length - 1) this.setState({ index: 0 })
+  }
+
+  increaseLikePut = (e) => {
+    e.preventDefault()
+    this.setState({
+      likes: this.state.likes + 1
+    })
+  }
+
+  decreaseLikePut = (e) => {
+    e.preventDefault()
+    this.setState({
+      likes: this.state.likes - 1
+    })
+
+  }
+
+  editBeer = async (e) => {
+    e.preventDefault()
+    this.beer()
+    const editedBeer = {
+      id: this.state.beers[this.state.index].id,
+      name: this.state.name,
+      likes: this.state.likes
+    }
+    const mappedBeers = this.state.beers.map(beer => {
+      if (this.state.beers[this.state.index].id === beer.id) {
+        this.state.beers[this.state.index].name = this.state.name
+        this.state.beers[this.state.index].likes = this.state.likes
+      }
+      return beer
+    })
+    console.log(mappedBeers)
+    await fetch(`url/${this.state.beers[this.state.index].id}`, {
+      method: 'PUT',
+      body: JSON.stringify(editedBeer),
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      }
+    })
+    this.setState({
+      beers: mappedBeers,
+      name: this.state.name,
+      likes: this.state.likes
+    })
   }
 
   // ${ this.state.beers[this.state.index].id }
@@ -110,34 +155,6 @@ class App extends Component {
     })
   }
 
-  editBeer = async (e) => {
-    e.preventDefault()
-    const editedBeer = {
-      id: this.state.flashcards[this.state.index].id,
-      name: this.state.name,
-      likes: this.state.likes
-    }
-    // const mappedBeers = this.state.beers.map(beer => {
-    //   if (this.state.beers[this.state.index].id === beer.id) {
-    //     this.state.beers[this.state.index].name = this.state.name
-    //     this.state.beers[this.state.index].likes = this.state.likes
-    //   }
-    //   return beer
-    // })
-    await fetch(`url${this.state.beers[this.state.index].id}`, {
-      method: 'PUT',
-      body: JSON.stringify(editedBeer),
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-      }
-    })
-    this.setState({
-      name: this.state.name,
-      likes: this.state.likes
-    })
-  }
-
   render() {
 
     return (
@@ -157,6 +174,7 @@ class App extends Component {
           increaseLike={this.increaseLike}
           decreaseLike={this.decreaseLike}
           deleteBeer={this.deleteBeer}
+          editBeer={this.editBeer}
         />
 
         {!this.state.addBeer
