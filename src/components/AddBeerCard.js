@@ -10,12 +10,13 @@ const AddBeerCard = (props) => {
         <div className="card-body">
           <h3>Add a Beer</h3>
           <i className="beerIcon fas fa-beer fa-3x"></i>
-          <h5 className="card-title">Name:</h5>
+          {/* <h5 className="card-title">Name:</h5> */}
           <input
             onChange={(e) => props.getNameOfBeer(e)}
             type="text"
             name="name"
             className="inputField"
+            placeholder="Name of Beer"
           />
 
           <div>
