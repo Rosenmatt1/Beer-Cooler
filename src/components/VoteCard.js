@@ -15,7 +15,7 @@ const VoteCard = (props) => {
           </div>
 
           <div className="row ">
-            <h5 className="centerBeer2 card-title textColor"> Name: 
+            <h5 className="centerBeer2 card-title textColor"> Name:
                 {props.beers[0]
                 ? <div>{props.beers[props.index].name}</div>
                 : <div></div>
@@ -30,15 +30,18 @@ const VoteCard = (props) => {
             }
           </h5>
 
-          <img
-            className="mug img-responsive center-block"
-            src={mug}
-            alt="beer-mug"
-          />
-
-          <div className="row centerBeer2">
-            <i onClick={(e) => props.increaseLikeVote(e)} className={props.greenClassUpVote ? "iconGreen fas fa-thumbs-up fa-3x mr-2" : "icon far fa-thumbs-up fa-3x mx-2"}></i>
-            <i onClick={(e) => props.decreaseLikeVote(e)} className={props.greenClassDownVote ? "iconGreen fas fa-thumbs-down fa-3x mr-2" : "icon far fa-thumbs-down fa-3x mx-2"}></i>
+          <div className="row">
+            <div className="col-6">
+              <img
+                className="mug img-responsive"
+                src={mug}
+                alt="beer-mug"
+              />
+            </div>
+            <div className="col-6">
+              <i onClick={(e) => props.increaseLikeVote(e)} className={props.greenClassUpVote ? "iconGreen fas fa-thumbs-up fa-3x mr-2" : "icon far fa-thumbs-up fa-3x mx-2"}></i>
+              <i onClick={(e) => props.decreaseLikeVote(e)} className={props.greenClassDownVote ? "iconGreen fas fa-thumbs-down fa-3x mr-2" : "icon far fa-thumbs-down fa-3x mx-2"}></i>
+            </div>
           </div>
 
           <button

@@ -17,12 +17,12 @@ const AddBeerCard = (props) => {
             onChange={(e) => props.getNameOfBeer(e)}
             type="text"
             name="name"
-            className="inputField"
+            className="inputField mt-2"
             placeholder="Name of Beer"
           />
 
           <div>
-            <h5 className="centerBeer textColor"> Vote </h5>
+            <h5 className="centerBeer textColor bold mt-2"> Vote </h5>
             <div className="row justify-content-center">
               <i onClick={(e) => props.increaseLikeAdd(e)} className={props.greenClassUpAdd ? "iconGreen fas fa-thumbs-up fa-2x mr-2" : "icon far fa-thumbs-up fa-2x mx-2"}></i>
               <i onClick={(e) => props.decreaseLikeAdd(e)} className={props.greenClassDownAdd ? "iconGreen fas fa-thumbs-down fa-2x mr-2" : "icon far fa-thumbs-down fa-2x mx-2"}></i>
