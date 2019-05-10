@@ -37,8 +37,8 @@ const VoteCard = (props) => {
           />
 
           <div className="row centerBeer2">
-            <i onClick={(e) => props.increaseLikeVote(e)} className={props.greenClassUpVote ? "iconGreenVote fas fa-thumbs-up fa-3x mr-2" : "icon far fa-thumbs-up fa-3x mx-2"}></i>
-            <i onClick={(e) => props.decreaseLikeVote(e)} className={props.greenClassDownVote ? "iconGreenVote fas fa-thumbs-down fa-3x mr-2" : "icon far fa-thumbs-down fa-3x mx-2"}></i>
+            <i onClick={(e) => props.increaseLikeVote(e)} className={props.greenClassUpVote ? "iconGreen fas fa-thumbs-up fa-3x mr-2" : "icon far fa-thumbs-up fa-3x mx-2"}></i>
+            <i onClick={(e) => props.decreaseLikeVote(e)} className={props.greenClassDownVote ? "iconGreen fas fa-thumbs-down fa-3x mr-2" : "icon far fa-thumbs-down fa-3x mx-2"}></i>
           </div>
 
           <button
