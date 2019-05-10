@@ -14,20 +14,21 @@ const VoteCard = (props) => {
             <i className="beerIcon fas fa-beer fa-2x ml-2"></i>
           </div>
 
-          <div className="row ">
+          <div className="row">
             <h5 className="centerBeer2 card-title textColor"> Name:
-                {props.beers[0]
+            <p className="bold"> {props.beers[0]
                 ? <div>{props.beers[props.index].name}</div>
                 : <div></div>
               }
+              </p>
             </h5>
           </div>
 
           <h5 className="centerBeer2 card-text textColor">Likes:
-            {props.beers[0]
+            <p className="bold"> {props.beers[0]
               ? <div>{props.beers[props.index].likes}</div>
               : <div></div>
-            }
+            }</p>
           </h5>
 
           <div className="row">
