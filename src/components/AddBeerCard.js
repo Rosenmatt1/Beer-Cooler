@@ -9,6 +9,7 @@ const AddBeerCard = (props) => {
       <div className="card col-lg-8 mx-2 my-2">
         <div className="centerBeer card-body">
           <div className="row">
+            <i className="beerIcon fas fa-beer fa-2x mr-2"></i>
             <h3 className="textColor"> Add a Beer </h3>
             <i className="beerIcon fas fa-beer fa-2x ml-2"></i>
           </div>

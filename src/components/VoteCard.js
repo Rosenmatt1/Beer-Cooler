@@ -11,6 +11,7 @@ const VoteCard = (props) => {
         <div className="centerBeer2 card-body">
 
           <div className="row">
+            <i className="beerIcon fas fa-beer fa-2x mr-2"></i>
             <h3 className="textColor"> Your Vote Counts </h3>
             <i className="beerIcon fas fa-beer fa-2x ml-2"></i>
           </div>
