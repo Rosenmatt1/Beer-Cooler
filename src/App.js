@@ -42,6 +42,22 @@ class App extends Component {
     })
   }
 
+  increaseLikeVote = (e) => {
+    e.preventDefault()
+    this.setState({
+      likes: this.state.likes + 1,
+      greenClassUpVote: true
+    })
+  }
+
+  decreaseLikeVote = (e) => {
+    e.preventDefault()
+    this.setState({
+      likes: this.state.likes - 1,
+      greenClassDownVote: true
+    })
+  }
+
   editBeer = async (e) => {
     e.preventDefault()
     const editedBeer = {
@@ -67,7 +83,9 @@ class App extends Component {
     this.setState({
       beers: mappedBeers,
       name: this.state.name,
-      likes: this.state.likes
+      likes: this.state.likes,
+      greenClassUpVote: false,
+      greenClassDownVote: false,
     })
     this.currentBeer()
   }
@@ -96,7 +114,9 @@ class App extends Component {
     })
     this.setState({
       beers: removeBeer,
-      index: this.state.index + 1
+      index: this.state.index + 1,
+      greenClassUpVote: false,
+      greenClassDownVote: false
     })
     this.currentBeer()
   }
@@ -133,23 +153,9 @@ class App extends Component {
     })
     this.setState({
       beers: [...this.state.beers, newBeer],
-      addedBeer: true
-    })
-  }
-
-  increaseLikeVote = (e) => {
-    e.preventDefault()
-    this.setState({
-      likes: this.state.likes + 1,
-      greenClassUpVote: true
-    })
-  }
-
-  decreaseLikeVote = (e) => {
-    e.preventDefault()
-    this.setState({
-      likes: this.state.likes - 1,
-      greenClassDownVote: true
+      addedBeer: true,
+      greenClassUpAdd: false,
+      greenClassDownAdd: false
     })
   }
 
@@ -173,6 +179,8 @@ class App extends Component {
     e.preventDefault(e)
     this.setState({
       addBeer: false,
+      greenClassUpAdd: false,
+      greenClassDownAdd: false
     })
   }
 
