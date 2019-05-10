@@ -15,7 +15,8 @@ class App extends Component {
       index: 0,
       name: "",
       likes: 0,
-      addBeer: false
+      addBeer: false,
+      addedBeer: false
     }
   }
 
@@ -145,7 +146,8 @@ class App extends Component {
       }
     })
     this.setState({
-      beers: [...this.state.beers, newBeer]
+      beers: [...this.state.beers, newBeer],
+      addedBeer: true
     })
   }
 
@@ -159,7 +161,7 @@ class App extends Component {
   decreaseLike = (e) => {
     e.preventDefault()
     this.setState({
-      likes: this.state.likes - 1
+      likes: this.state.likes - 1,
     })
   }
 
@@ -207,6 +209,7 @@ class App extends Component {
             createBeer={this.createBeer}
             increaseLike={this.increaseLike}
             decreaseLike={this.decreaseLike}
+            addedBeer={this.state.addedBeer}
           />
         }
       </div>

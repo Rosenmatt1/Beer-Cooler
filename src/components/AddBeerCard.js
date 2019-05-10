@@ -29,12 +29,17 @@ const AddBeerCard = (props) => {
             </div>
           </div>
 
-          <button
-            type="button"
-            className="clickable"
-            onClick={(e) => props.createBeer(e)}
-          > Create Beer
-          </button>
+
+        {props.addedBeer 
+          ? <h5>Beer has Been Added</h5>
+          : <button
+              type="button"
+              className="clickable"
+              onClick={(e) => props.createBeer(e)}
+            > Create Beer
+            </button>
+      }
+          
 
         </div>
       </div>
