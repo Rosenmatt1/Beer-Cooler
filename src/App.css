@@ -5,11 +5,11 @@
   margin-right: 50%;  */
 }   
 
-.textColor {
-  color:#513B41;
+.mug {
+  height: 10vw;
 }
 
-.vote {
+.textColor {
   color:#513B41;
 }
 
@@ -38,6 +38,16 @@
 
 .inputField {
   border: 1px solid #513B41;
+}
+
+.centerBeer {
+  margin-left: 35%;
+  margin-right: 35%; 
+}
+
+.centerBeer2 {
+  margin-left: 30%;
+  margin-right: 30%; 
 }
 
     

@@ -8,17 +8,21 @@ const VoteCard = (props) => {
   return (
     <div className="row justify-content-center">
       <div className="card col-lg-8 mx-2 my-2">
-        <div className="card-body">
-          <h3 className="textColor"> Your Vote Counts </h3>
+        <div className="centerBeer2 card-body">
 
-          <h5 className="card-title textColor"> Name:
+          <div className="row">
+            <h3 className="textColor"> Your Vote Counts </h3>
+            <i className="beerIcon fas fa-beer fa-2x ml-2"></i>
+          </div>
+
+          <h5 className="centerBeer2 card-title textColor"> Name:
             {props.beers[0]
               ? <div>{props.beers[props.index].name}</div>
               : <div></div>
             }
           </h5>
 
-          <h5 className="card-text textColor">Likes:
+          <h5 className="centerBeer2 card-text textColor">Likes:
             {props.beers[0]
               ? <div>{props.beers[props.index].likes}</div>
               : <div></div>
@@ -26,14 +30,14 @@ const VoteCard = (props) => {
           </h5>
 
           <img
-            className="cooler img-responsive center-block"
+            className="mug img-responsive center-block"
             src={mug}
             alt="beer-mug"
           />
 
-          <div className="col">
-            <i onClick={(e) => props.increaseLike(e)} className="vote far fa-thumbs-up fa-3x"></i>
-            <i onClick={(e) => props.decreaseLike(e)} className="vote far fa-thumbs-down fa-3x"></i>
+          <div className="row centerBeer2">
+            <i onClick={(e) => props.increaseLike(e)} className="textColor far fa-thumbs-up fa-3x"></i>
+            <i onClick={(e) => props.decreaseLike(e)} className="textColor far fa-thumbs-down fa-3x"></i>
           </div>
 
           <button
@@ -41,11 +45,11 @@ const VoteCard = (props) => {
             className="clickable"
             onClick={(e) => props.editBeer(e)}
           >
-             Cast Vote!
+            Cast Vote!
           </button>
 
-          <button 
-            type="button" 
+          <button
+            type="button"
             className="clickable"
             onClick={(e) => props.deleteBeer(e)}
           >
