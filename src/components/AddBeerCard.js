@@ -8,7 +8,7 @@ const AddBeerCard = (props) => {
     <div className="row justify-content-center">
       <div className="card col-lg-8 mx-2 my-2">
         <div className="centerBeer card-body">
-          <div className="row">
+          <div className="row justify-content-center">
             <i className="beerIcon fas fa-beer fa-2x mr-2"></i>
             <h3 className="textColor"> Add a Beer </h3>
             <i className="beerIcon fas fa-beer fa-2x ml-2"></i>
@@ -23,9 +23,9 @@ const AddBeerCard = (props) => {
 
           <div>
             <h5 className="centerBeer textColor"> Vote </h5>
-            <div className="row">
-              <i onClick={(e) => props.increaseLike(e)} className="textColor far fa-thumbs-up fa-2x mx-2"></i>
-              <i onClick={(e) => props.decreaseLike(e)} className="textColor far fa-thumbs-down fa-2x"></i>
+            <div className="row justify-content-center">
+              <i onClick={(e) => props.increaseLike(e)} className="icon far fa-thumbs-up fa-2x mx-2"></i>
+              <i onClick={(e) => props.decreaseLike(e)} className="icon far fa-thumbs-down fa-2x"></i>
             </div>
           </div>
 

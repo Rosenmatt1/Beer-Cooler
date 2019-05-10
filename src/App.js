@@ -166,7 +166,7 @@ class App extends Component {
 
     return (
       <div className="container-fluid">
-        <h1 className="text-center textColor">Das Boot Beer Cooler</h1>
+        <h1 className="text-center heading">Das Boot Beer Cooler</h1>
 
         <div className="row">
         <div className="col-5"></div>
@@ -205,7 +205,7 @@ class App extends Component {
             getNameOfBeer={this.getNameOfBeer}
             createBeer={this.createBeer}
             increaseLike={this.increaseLike}
-            decreaseLike={this.deceaseLike}
+            decreaseLike={this.decreaseLike}
           />
         }
       </div>

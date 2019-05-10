@@ -1,3 +1,8 @@
+.heading {
+  font-family: 'Nanum Myeongjo', serif;
+  color:#513B41;
+}
+
 .cooler {
   height: 20vw;
   /* justify-content: center;  */
@@ -11,6 +16,14 @@
 
 .textColor {
   color:#513B41;
+}
+
+.icon {
+  color:#513B41;
+}
+
+.icon:active {
+  color: green;
 }
 
 .link {

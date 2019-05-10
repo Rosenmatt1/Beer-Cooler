@@ -7,7 +7,7 @@ import mug from '../assets/beer-mug.gif'
 const VoteCard = (props) => {
   return (
     <div className="row justify-content-center">
-      <div className="card col-lg-8 mx-2 my-2">
+      <div className="justify-content-center card col-lg-8 mx-2 my-2">
         <div className="centerBeer2 card-body">
 
           <div className="row">
@@ -16,12 +16,14 @@ const VoteCard = (props) => {
             <i className="beerIcon fas fa-beer fa-2x ml-2"></i>
           </div>
 
-          <h5 className="centerBeer2 card-title textColor"> Name:
-            {props.beers[0]
-              ? <div>{props.beers[props.index].name}</div>
-              : <div></div>
-            }
-          </h5>
+          <div className="row ">
+            <h5 className="centerBeer2 card-title textColor"> Name: 
+                {props.beers[0]
+                ? <div>{props.beers[props.index].name}</div>
+                : <div></div>
+              }
+            </h5>
+          </div>
 
           <h5 className="centerBeer2 card-text textColor">Likes:
             {props.beers[0]
@@ -37,8 +39,8 @@ const VoteCard = (props) => {
           />
 
           <div className="row centerBeer2">
-            <i onClick={(e) => props.increaseLike(e)} className="textColor far fa-thumbs-up fa-3x"></i>
-            <i onClick={(e) => props.decreaseLike(e)} className="textColor far fa-thumbs-down fa-3x"></i>
+            <i onClick={(e) => props.increaseLike(e)} className="icon far fa-thumbs-up fa-3x"></i>
+            <i onClick={(e) => props.decreaseLike(e)} className="icon far fa-thumbs-down fa-3x"></i>
           </div>
 
           <button
