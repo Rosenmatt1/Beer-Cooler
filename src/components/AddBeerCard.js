@@ -24,8 +24,8 @@ const AddBeerCard = (props) => {
           <div>
             <h5 className="centerBeer textColor"> Vote </h5>
             <div className="row justify-content-center">
-              <i onClick={(e) => props.increaseLike(e)} className="icon far fa-thumbs-up fa-2x mx-2"></i>
-              <i onClick={(e) => props.decreaseLike(e)} className="icon far fa-thumbs-down fa-2x"></i>
+              <i onClick={(e) => props.increaseLike(e)} className={props.greenClassUp ? "iconGreen fas fa-thumbs-up fa-2x mr-2" : "icon far fa-thumbs-up fa-2x mx-2"}></i>
+              <i onClick={(e) => props.decreaseLike(e)} className={props.greenClassDown ? "iconGreen fas fa-thumbs-down fa-2x mr-2" : "icon far fa-thumbs-down fa-2x mx-2"}></i>
             </div>
           </div>
 

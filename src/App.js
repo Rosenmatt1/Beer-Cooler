@@ -16,7 +16,8 @@ class App extends Component {
       likes: 0,
       addBeer: false,
       addedBeer: false,
-      greenClass: false
+      greenClassUp: false,
+      greenClassDown: false
     }
   }
 
@@ -153,7 +154,8 @@ class App extends Component {
   increaseLike = (e) => {
     e.preventDefault()
     this.setState({
-      likes: this.state.likes + 1
+      likes: this.state.likes + 1,
+      greenClassUp: true
     })
   }
 
@@ -161,6 +163,7 @@ class App extends Component {
     e.preventDefault()
     this.setState({
       likes: this.state.likes - 1,
+      greenClassDown: true
     })
   }
 
@@ -196,7 +199,8 @@ class App extends Component {
           decreaseLike={this.decreaseLike}
           deleteBeer={this.deleteBeer}
           editBeer={this.editBeer}
-          greenClass={this.state.greenClass}
+          greenClassUp={this.state.greenClassUp}
+          greenClassDown={this.state.greenClassDown}
         />
 
         {!this.state.addBeer
@@ -217,6 +221,8 @@ class App extends Component {
             decreaseLike={this.decreaseLike}
             addedBeer={this.state.addedBeer}
             closeBeer={this.closeBeer}
+            greenClassUp={this.state.greenClassUp}
+            greenClassDown={this.state.greenClassDown}
           />
         }
 
