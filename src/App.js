@@ -16,7 +16,8 @@ class App extends Component {
       name: "",
       likes: 0,
       addBeer: false,
-      addedBeer: false
+      addedBeer: false,
+      greenClass: false
     }
   }
 
@@ -42,14 +43,16 @@ class App extends Component {
   increaseLikePut = (e) => {
     e.preventDefault()
     this.setState({
-      likes: this.state.likes + 1
+      likes: this.state.likes + 1,
+      greenClass: true
     })
   }
 
   decreaseLikePut = (e) => {
     e.preventDefault()
     this.setState({
-      likes: this.state.likes - 1
+      likes: this.state.likes - 1,
+      greenClass: true
     })
   }
 
@@ -179,15 +182,15 @@ class App extends Component {
         <h1 className="text-center heading">Das Boot Beer Cooler</h1>
 
         <div className="row">
-        <div className="col-5"></div>
+          <div className="col-5"></div>
           <img
-            className="cooler img-responsive center-block"
+            className="boot img-responsive center-block"
             src={boot}
             alt="Das Boot Beer Cooler"
           />
-        <div className="col-5"></div>
+          <div className="col-5"></div>
         </div>
-        
+
         <VoteCard
           beers={this.state.beers}
           name={this.state.name}
@@ -197,6 +200,7 @@ class App extends Component {
           decreaseLike={this.decreaseLike}
           deleteBeer={this.deleteBeer}
           editBeer={this.editBeer}
+          greenClass={this.state.greenClass}
         />
 
         {!this.state.addBeer

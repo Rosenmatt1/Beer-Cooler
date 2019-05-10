@@ -1,12 +1,10 @@
 import React from 'react';
 import '../App.css';
 
-// border - 0
-
 const AddBeerCard = (props) => {
   return (
     <div className="row justify-content-center">
-      <div className="card col-lg-8 mx-2 my-2">
+      <div className="card col-lg-8 mx-2 my-2 border-0">
         <div className="centerBeer card-body">
           <div className="row justify-content-center">
             <i className="beerIcon fas fa-beer fa-2x mr-2"></i>

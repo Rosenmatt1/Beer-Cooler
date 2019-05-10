@@ -2,12 +2,10 @@ import React from 'react';
 import '../App.css';
 import mug from '../assets/beer-mug.gif'
 
-// border - 0
-
 const VoteCard = (props) => {
   return (
     <div className="row justify-content-center">
-      <div className="justify-content-center card col-lg-8 mx-2 my-2">
+      <div className="justify-content-center card col-lg-8 mx-2 my-2 border-0">
         <div className="centerBeer2 card-body">
 
           <div className="row">
