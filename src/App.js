@@ -109,6 +109,7 @@ class App extends Component {
     })
     this.setState({
       beers: removeBeer,
+      index: this.state.index + 1
     })
     this.currentBeer()
   }
