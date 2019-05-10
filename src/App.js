@@ -16,8 +16,10 @@ class App extends Component {
       likes: 0,
       addBeer: false,
       addedBeer: false,
-      greenClassUp: false,
-      greenClassDown: false
+      greenClassUpVote: false,
+      greenClassDownVote: false,
+      greenClassUpAdd: false,
+      greenClassDownAdd: false
     }
   }
 
@@ -39,22 +41,6 @@ class App extends Component {
       name: this.state.beers[this.state.index].name
     })
   }
-
-  // increaseLikePut = (e) => {
-  //   e.preventDefault()
-  //   this.setState({
-  //     likes: this.state.likes + 1,
-  //     greenClass: true
-  //   })
-  // }
-
-  // decreaseLikePut = (e) => {
-  //   e.preventDefault()
-  //   this.setState({
-  //     likes: this.state.likes - 1,
-  //     greenClass: true
-  //   })
-  // }
 
   editBeer = async (e) => {
     e.preventDefault()
@@ -151,19 +137,35 @@ class App extends Component {
     })
   }
 
-  increaseLike = (e) => {
+  increaseLikeVote = (e) => {
     e.preventDefault()
     this.setState({
       likes: this.state.likes + 1,
-      greenClassUp: true
+      greenClassUpVote: true
     })
   }
 
-  decreaseLike = (e) => {
+  decreaseLikeVote = (e) => {
     e.preventDefault()
     this.setState({
       likes: this.state.likes - 1,
-      greenClassDown: true
+      greenClassDownVote: true
+    })
+  }
+
+  increaseLikeAdd = (e) => {
+    e.preventDefault()
+    this.setState({
+      likes: this.state.likes + 1,
+      greenClassUpAdd: true
+    })
+  }
+
+  decreaseLikeAdd = (e) => {
+    e.preventDefault()
+    this.setState({
+      likes: this.state.likes - 1,
+      greenClassDownAdd: true
     })
   }
 
@@ -195,12 +197,12 @@ class App extends Component {
           name={this.state.name}
           likes={this.state.likes}
           index={this.state.index}
-          increaseLike={this.increaseLike}
-          decreaseLike={this.decreaseLike}
+          increaseLikeVote={this.increaseLikeVote}
+          decreaseLikeVote={this.decreaseLikeVote}
           deleteBeer={this.deleteBeer}
           editBeer={this.editBeer}
-          greenClassUp={this.state.greenClassUp}
-          greenClassDown={this.state.greenClassDown}
+          greenClassUpVote={this.state.greenClassUpVote}
+          greenClassDownVote={this.state.greenClassDownVote}
         />
 
         {!this.state.addBeer
@@ -217,12 +219,12 @@ class App extends Component {
           : <AddBeerCard
             getNameOfBeer={this.getNameOfBeer}
             createBeer={this.createBeer}
-            increaseLike={this.increaseLike}
-            decreaseLike={this.decreaseLike}
+            increaseLikeAdd={this.increaseLikeAdd}
+            decreaseLikeAdd={this.decreaseLikeAdd}
             addedBeer={this.state.addedBeer}
             closeBeer={this.closeBeer}
-            greenClassUp={this.state.greenClassUp}
-            greenClassDown={this.state.greenClassDown}
+            greenClassUpAdd={this.state.greenClassUpAdd}
+            greenClassDownAdd={this.state.greenClassDownAdd}
           />
         }
 
