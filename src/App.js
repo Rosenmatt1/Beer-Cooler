@@ -185,7 +185,6 @@ class App extends Component {
   }
 
   render() {
-
     return (
       <div className="container-fluid">
         <h1 className="text-center heading">Das Boot Beer Cooler</h1>

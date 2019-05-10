@@ -9,9 +9,9 @@ const VoteCard = (props) => {
         <div className="centerBeer2 card-body">
 
           <div className="row">
-            <i className="beerIcon fas fa-beer fa-2x mr-2"></i>
+            <i className="beerIcon fas fa-beer fa-2x mx-2"></i>
             <h3 className="textColor"> Your Vote Counts </h3>
-            <i className="beerIcon fas fa-beer fa-2x ml-2"></i>
+            <i className="beerIcon fas fa-beer fa-2x mx-2"></i>
           </div>
 
           <div className="row">
@@ -40,8 +40,8 @@ const VoteCard = (props) => {
               />
             </div>
             <div className="col-6">
-              <i onClick={(e) => props.increaseLikeVote(e)} className={props.greenClassUpVote ? "iconGreen fas fa-thumbs-up fa-3x mr-2" : "icon far fa-thumbs-up fa-3x mx-2"}></i>
-              <i onClick={(e) => props.decreaseLikeVote(e)} className={props.greenClassDownVote ? "iconGreen fas fa-thumbs-down fa-3x mr-2" : "icon far fa-thumbs-down fa-3x mx-2"}></i>
+              <i onClick={(e) => props.increaseLikeVote(e)} className={props.greenClassUpVote ? "iconGreen fas fa-thumbs-up fa-3x m-2" : "icon far fa-thumbs-up fa-3x m-2"}></i>
+              <i onClick={(e) => props.decreaseLikeVote(e)} className={props.greenClassDownVote ? "iconGreen fas fa-thumbs-down fa-3x m-2" : "icon far fa-thumbs-down fa-3x m-2"}></i>
             </div>
           </div>
 
