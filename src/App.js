@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-// import cooler from './assets/beer-cooler.png'
 import boot from './assets/beer-boot.jpeg'
 import VoteCard from './components/VoteCard.js'
 import AddBeerCard from './components/AddBeerCard.js'
@@ -70,7 +69,6 @@ class App extends Component {
       }
       return beer
     })
-    console.log(mappedBeers)
     await fetch(`https://cors-anywhere.herokuapp.com/https://beer.fluentcloud.com/v1/beer/${this.state.beers[this.state.index].id}`, {
       method: 'PUT',
       body: JSON.stringify(editedBeer),
@@ -95,14 +93,12 @@ class App extends Component {
       }
       return beer
     })
-    console.log("removeBeer", removeBeer)
     const removedBeer = this.state.beers.filter(beer => {
       if (beer.id === this.state.beers[this.state.index].id) {
         return beer
       }
       return !beer
     })
-    console.log("removedBeer", removedBeer)
     await fetch(`https://cors-anywhere.herokuapp.com/https://beer.fluentcloud.com/v1/beer/${this.state.beers[this.state.index].id}`, {
       method: 'DELETE',
       body: JSON.stringify(removedBeer),
@@ -223,6 +219,7 @@ class App extends Component {
             closeBeer={this.closeBeer}
           />
         }
+
       </div>
     )
   }

@@ -5,9 +5,6 @@
 
 .boot {
   height: 20vw;
-  /* justify-content: center;  */
-  /* margin-left: 50%;
-  margin-right: 50%;  */
 }   
 
 .mug {
@@ -23,6 +20,10 @@
 }
 
 .icon:active {
+  color: green;
+}
+
+.iconGreen {
   color: green;
 }
 

@@ -6,11 +6,13 @@ const AddBeerCard = (props) => {
     <div className="row justify-content-center">
       <div className="card col-lg-8 mx-2 my-2 border-0">
         <div className="centerBeer card-body">
+
           <div className="row justify-content-center">
             <i className="beerIcon fas fa-beer fa-2x mr-2"></i>
             <h3 className="textColor"> Add a Beer </h3>
             <i className="beerIcon fas fa-beer fa-2x ml-2"></i>
           </div>
+
           <input
             onChange={(e) => props.getNameOfBeer(e)}
             type="text"
@@ -27,24 +29,22 @@ const AddBeerCard = (props) => {
             </div>
           </div>
 
-
-        {props.addedBeer 
-          ? <h5>Beer has Been Added</h5>
-          : <button
+          {props.addedBeer
+            ? <h5>Beer has Been Added</h5>
+            : <button
               type="button"
               className="clickable"
               onClick={(e) => props.createBeer(e)}
             > Create Beer
-            </button>
-      }
+              </button>
+          }
 
           <button
             type="button"
             className="clickable"
             onClick={(e) => props.closeBeer(e)}
           > Close
-            </button>
-          
+          </button>
 
         </div>
       </div>
