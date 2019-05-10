@@ -40,21 +40,21 @@ class App extends Component {
     })
   }
 
-  increaseLikePut = (e) => {
-    e.preventDefault()
-    this.setState({
-      likes: this.state.likes + 1,
-      greenClass: true
-    })
-  }
+  // increaseLikePut = (e) => {
+  //   e.preventDefault()
+  //   this.setState({
+  //     likes: this.state.likes + 1,
+  //     greenClass: true
+  //   })
+  // }
 
-  decreaseLikePut = (e) => {
-    e.preventDefault()
-    this.setState({
-      likes: this.state.likes - 1,
-      greenClass: true
-    })
-  }
+  // decreaseLikePut = (e) => {
+  //   e.preventDefault()
+  //   this.setState({
+  //     likes: this.state.likes - 1,
+  //     greenClass: true
+  //   })
+  // }
 
   editBeer = async (e) => {
     e.preventDefault()
