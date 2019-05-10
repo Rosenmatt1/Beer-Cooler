@@ -36,6 +36,11 @@
   box-shadow: 0 8px 6px -6px black;
 }
 
+.clickable:active {
+  color: #513B41;
+  background-color: white;
+}
+
 .inputField {
   border: 1px solid #513B41;
 }
