@@ -165,6 +165,13 @@ class App extends Component {
     })
   }
 
+  closeBeer = (e) => {
+    e.preventDefault(e)
+    this.setState({
+      addBeer: false,
+    })
+  }
+
   render() {
 
     return (
@@ -193,8 +200,7 @@ class App extends Component {
         />
 
         {!this.state.addBeer
-          ?
-          <div className="row center">
+          ? <div className="row center">
             <div className="col">
               <p
                 onClick={(e) => this.addNewBeerSection(e)}
@@ -210,6 +216,7 @@ class App extends Component {
             increaseLike={this.increaseLike}
             decreaseLike={this.decreaseLike}
             addedBeer={this.state.addedBeer}
+            closeBeer={this.closeBeer}
           />
         }
       </div>

@@ -39,6 +39,13 @@ const AddBeerCard = (props) => {
             > Create Beer
             </button>
       }
+
+          <button
+            type="button"
+            className="clickable"
+            onClick={(e) => props.closeBeer(e)}
+          > Close
+            </button>
           
 
         </div>
