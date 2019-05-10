@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import cooler from './assets/beer-cooler.png'
-// import boot from './assets/beer-boot.jpeg'
+// import cooler from './assets/beer-cooler.png'
+import boot from './assets/beer-boot.jpeg'
 import VoteCard from './components/VoteCard.js'
 import AddBeerCard from './components/AddBeerCard.js'
 
@@ -166,13 +166,13 @@ class App extends Component {
 
     return (
       <div className="container-fluid">
-        <h1 className="text-center textColor">The Beer Cooler</h1>
+        <h1 className="text-center textColor">Das Boot Beer Cooler</h1>
 
         <div className="row">
         <div className="col-5"></div>
           <img
             className="cooler img-responsive center-block"
-            src={cooler}
+            src={boot}
             alt="Das Boot Beer Cooler"
           />
         <div className="col-5"></div>
